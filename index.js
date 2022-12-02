@@ -59,14 +59,8 @@ async function run() {
         })
 
         //for get users
-        app.get('/users',verifyJWT, async (req, res) => {
-            const query = {}
-            const email = req.query.email;
-            const users = await usersCollection.findOne(query)
-            if (users) {
-                const token = jwt.sign({ email }, process.env.ACCESS_TOKEN, { expiresIn: '7d' })
-                return res.send({ accessToken: token })
-            }
+        app.get('/users', async (req, res) => {
+            const query = { };
             const result = await usersCollection.find(query).toArray()
             res.send(result)
         })
