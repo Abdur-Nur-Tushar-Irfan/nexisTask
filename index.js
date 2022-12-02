@@ -11,8 +11,6 @@ app.use(cors());
 app.use(express.json());
 
 
-//user: frontEnd
-//password: iBWh69CwBj2kapEq
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.fpvwzmp.mongodb.net/?retryWrites=true&w=majority`;
