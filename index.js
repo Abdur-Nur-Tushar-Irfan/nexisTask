@@ -31,6 +31,13 @@ async function run() {
 
         })
 
+        //for get users
+        app.get('/users',async (req,res)=>{
+            const query={}
+            const result=await usersCollection.find(query).toArray()
+            res.send(result)
+        })
+
     }
     finally {
 
